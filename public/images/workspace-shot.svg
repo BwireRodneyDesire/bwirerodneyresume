@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" role="img" aria-labelledby="title desc">
+  <title id="title">Workspace Illustration</title>
+  <desc id="desc">Desk with laptop and code window.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1f2937"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="650" rx="36" fill="url(#bg)"/>
+  <rect x="70" y="80" width="760" height="390" rx="28" fill="#111827" stroke="#fb923c" stroke-width="8"/>
+  <rect x="120" y="140" width="300" height="26" rx="8" fill="#374151"/>
+  <rect x="120" y="190" width="520" height="20" rx="8" fill="#ea580c"/>
+  <rect x="120" y="230" width="450" height="20" rx="8" fill="#f59e0b"/>
+  <rect x="120" y="270" width="390" height="20" rx="8" fill="#60a5fa"/>
+  <rect x="120" y="310" width="560" height="20" rx="8" fill="#22d3ee"/>
+  <rect x="170" y="500" width="560" height="40" rx="20" fill="#fb923c"/>
+</svg>

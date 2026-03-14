@@ -407,6 +407,58 @@ hr {
 	color: var(--text-dim);
 }
 
+.contact-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	justify-content: center;
+	margin-top: 0.4rem;
+}
+
+.contact-btn {
+	gap: 0.5rem;
+	position: relative;
+	overflow: hidden;
+	transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.contact-btn svg {
+	flex: 0 0 auto;
+	transition: transform 220ms ease;
+}
+
+.contact-btn::after {
+	content: "";
+	position: absolute;
+	left: -130%;
+	top: 0;
+	width: 120%;
+	height: 100%;
+	background: linear-gradient(110deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+	transition: transform 420ms ease;
+}
+
+.contact-btn:hover::after {
+	transform: translateX(190%);
+}
+
+.contact-btn:hover svg {
+	transform: scale(1.12) rotate(-6deg);
+}
+
+.whatsapp-btn {
+	border-color: rgba(37, 211, 102, 0.5);
+	color: #bef7d4;
+	background: rgba(37, 211, 102, 0.14);
+}
+
+.phone-btn {
+	border-color: rgba(59, 130, 246, 0.5);
+	color: #cde3ff;
+	background: rgba(59, 130, 246, 0.14);
+	animation: ringPulse 2.6s ease-in-out infinite;
+}
+
 .reveal {
 	opacity: 0;
 	transform: translateY(14px);
@@ -468,6 +520,16 @@ hr {
 	}
 }
 
+@keyframes ringPulse {
+	0%,
+	100% {
+		box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.22);
+	}
+	50% {
+		box-shadow: 0 0 0 8px rgba(59, 130, 246, 0);
+	}
+}
+
 @media (max-width: 960px) {
 	.hero,
 	.about-layout {
@@ -494,6 +556,9 @@ hr {
 	}
 	.btn {
 		width: 100%;
+	}
+	.contact-actions {
+		flex-direction: column;
 	}
 	.welcome-typing {
 		font-size: 0.76rem;

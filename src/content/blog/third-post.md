@@ -1,16 +1,39 @@
 ---
-title: "Third post"
-description: "Lorem ipsum dolor sit amet"
-pubDate: "Jul 22 2022"
-heroImage: "/blog-placeholder-2.jpg"
+title: "Project Philosophy: Building Systems That Matter"
+description: "How I combine software, embedded engineering, and automation to solve practical real-world problems."
+pubDate: "Mar 17 2026"
+heroImage: "/images/matter.jpeg"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+I enjoy building systems that connect software to real-world problems. Whether the work is in water infrastructure or algorithmic finance, my focus stays the same: use computation, automation, and clear decision logic to deliver measurable value.
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+## Why This Matters to Me
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+Many projects look impressive in demos but fail in real usage. My goal is different. I design solutions that can be trusted over time, by real users, in imperfect environments.
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+That means I care deeply about:
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+- Reliability under noisy or changing inputs
+- Interfaces that communicate system state clearly
+- Engineering choices that reduce operational friction
+- Iteration based on observed behavior, not assumptions
+
+## From Hardware to Interface
+
+The smart water monitoring work is a good example of this philosophy in action. The embedded system captures and processes physical water-level signals, while the web platform converts those signals into actionable information.
+
+![Embedded system prototype and wiring](/images/embeddedsystem.jpeg)
+
+![Web dashboard for tank monitoring](/images/website.png)
+
+Building both layers taught me that technical excellence is not isolated to one stack. A reliable product depends on the quality of the sensing logic, the transport path, and the final user experience.
+
+## Applying the Same Thinking to Trading Bots
+
+I apply the same systems mindset to algorithmic trading. The objective is not to chase perfect predictions. The objective is to engineer robust decision loops: gather input, evaluate state, execute safely, and adapt.
+
+Across domains, the principle is consistent: good systems are understandable, testable, and resilient when conditions shift.
+
+## Ongoing Direction
+
+I am continuously refining my work toward scalable architectures that bridge software and real-world operations. The long-term vision is to build products where data collection, automation, and user-facing clarity operate as one cohesive system.

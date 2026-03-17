@@ -96,7 +96,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 						<span>API Integration</span>
 					</div>
 					<div class="hero-actions">
-						<a class="btn btn-primary" href="/blog">View Insights</a>
+						<a class="btn btn-primary" id="view-insights-link" href="/blog">View Insights</a>
 						<a class="btn btn-secondary" href="#contact">Start a Project</a>
 					</div>
 				</div>
@@ -134,6 +134,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				</div>
 			</section>
 		</main>
+		<script is:inline>
+			const insightsLink = document.getElementById('view-insights-link');
+			if (insightsLink) {
+				insightsLink.addEventListener('click', () => {
+					window.sessionStorage.setItem('insights-entry-transition', '1');
+				});
+			}
+		</script>
 		<Footer />
 	</body>
 </html>

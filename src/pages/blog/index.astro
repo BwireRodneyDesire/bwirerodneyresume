@@ -6,6 +6,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 
+const BLOG_TITLE = 'Project Insights';
+const BLOG_DESCRIPTION =
+	'Detailed case studies on embedded systems, web platforms, and automation projects built by Bwire Rodney.';
+
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
@@ -14,10 +18,48 @@ const posts = (await getCollection('blog')).sort(
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={`${BLOG_TITLE} | ${SITE_TITLE}`} description={BLOG_DESCRIPTION ?? SITE_DESCRIPTION} />
 		<style>
+			@keyframes riseIn {
+				from {
+					opacity: 0;
+					transform: translateY(30px) scale(0.992);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0) scale(1);
+				}
+			}
+			@keyframes pulseGlow {
+				0%,
+				100% {
+					box-shadow: 0 20px 44px rgba(7, 2, 12, 0.34);
+				}
+				50% {
+					box-shadow: 0 24px 54px rgba(255, 158, 62, 0.2);
+				}
+			}
 			main {
-				width: 960px;
+				width: min(1040px, calc(100% - 2rem));
+				margin: 0 auto;
+			}
+			body.entered-from-insights main {
+				animation: riseIn 760ms cubic-bezier(0.22, 1, 0.36, 1) both;
+			}
+			.intro {
+				margin: 2.5rem 0 2rem;
+				animation: riseIn 820ms cubic-bezier(0.22, 1, 0.36, 1) both;
+			}
+			.intro h1 {
+				margin: 0 0 0.6rem;
+				line-height: 1.1;
+				color: #ffe4b5;
+				text-shadow: 0 8px 24px rgba(255, 173, 74, 0.18);
+			}
+			.intro p {
+				margin: 0;
+				max-width: 70ch;
+				color: #e5c9a8;
 			}
 			ul {
 				display: flex;
@@ -29,15 +71,51 @@ const posts = (await getCollection('blog')).sort(
 			}
 			ul li {
 				width: calc(50% - 1rem);
+				opacity: 0;
+				transform: translateY(24px) scale(0.995);
+				will-change: transform, opacity;
+				animation: riseIn 860ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
 			}
 			ul li * {
 				text-decoration: none;
-				transition: 0.2s ease;
+				transition: 260ms cubic-bezier(0.22, 1, 0.36, 1);
 			}
 			ul li:first-child {
 				width: 100%;
 				margin-bottom: 1rem;
-				text-align: center;
+			}
+			ul li a {
+				display: block;
+				height: 100%;
+				padding: 0.85rem;
+				border-radius: 18px;
+				border: 1px solid rgba(255, 183, 102, 0.25);
+				background:
+					radial-gradient(circle at 12% 10%, rgba(255, 190, 110, 0.18), transparent 48%),
+					linear-gradient(155deg, rgba(37, 14, 42, 0.9), rgba(51, 19, 16, 0.78));
+				box-shadow: 0 20px 44px rgba(7, 2, 12, 0.34);
+				backdrop-filter: blur(4px);
+				overflow: hidden;
+				isolation: isolate;
+			}
+			ul li a::before {
+				content: '';
+				position: absolute;
+				inset: 0;
+				background: linear-gradient(120deg, rgba(255, 177, 73, 0.16), transparent 45%);
+				opacity: 0;
+				transition: opacity 440ms cubic-bezier(0.22, 1, 0.36, 1);
+				pointer-events: none;
+				z-index: -1;
+			}
+			ul li a:hover {
+				transform: translateY(-6px) scale(1.01);
+				border-color: rgba(255, 196, 121, 0.44);
+				animation: pulseGlow 2.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+			}
+			ul li a:hover::before,
+			ul li a:focus-visible::before {
+				opacity: 1;
 			}
 			ul li:first-child img {
 				width: 100%;
@@ -46,35 +124,51 @@ const posts = (await getCollection('blog')).sort(
 				font-size: 2.369rem;
 			}
 			ul li img {
-				margin-bottom: 0.5rem;
+				margin-bottom: 0.65rem;
 				border-radius: 12px;
+				aspect-ratio: 2 / 1;
+				object-fit: cover;
+				transform: scale(1);
+				transition:
+					transform 620ms cubic-bezier(0.22, 1, 0.36, 1),
+					filter 620ms cubic-bezier(0.22, 1, 0.36, 1);
+				filter: saturate(1.04) contrast(1.03);
 			}
-			ul li a {
-				display: block;
+			ul li a:hover img,
+			ul li a:focus-visible img {
+				transform: scale(1.035);
+				filter: saturate(1.12) contrast(1.07);
 			}
 			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
+				margin: 0 0 0.45rem;
+				color: #ffd07f;
+				line-height: 1.15;
+			}
+			.excerpt {
+				margin: 0 0 0.65rem;
+				color: #f2dfc3;
+				line-height: 1.5;
 			}
 			.date {
 				margin: 0;
-				color: rgb(var(--gray));
+				color: #efc67f;
+				font-size: 0.9rem;
 			}
 			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
+			ul li a:hover .date,
+			ul li a:hover .excerpt {
+				color: #ffe6b8;
 			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
+			ul li a:focus-visible {
+				outline: 2px solid rgba(255, 193, 115, 0.85);
+				outline-offset: 3px;
 			}
 			@media (max-width: 720px) {
 				ul {
-					gap: 0.5em;
+					gap: 0.85rem;
 				}
 				ul li {
 					width: 100%;
-					text-align: center;
 				}
 				ul li:first-child {
 					margin-bottom: 0;
@@ -82,20 +176,46 @@ const posts = (await getCollection('blog')).sort(
 				ul li:first-child .title {
 					font-size: 1.563em;
 				}
+				.intro {
+					margin: 1.8rem 0 1.4rem;
+				}
+			}
+			@media (prefers-reduced-motion: reduce) {
+				body.entered-from-insights main,
+				.intro,
+				ul li {
+					animation: none;
+					opacity: 1;
+					transform: none;
+				}
+				ul li a,
+				ul li img {
+					transition: none;
+				}
 			}
 		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
+			<section class="intro" aria-label="Project blog introduction">
+				<h1>{BLOG_TITLE}</h1>
+				<p>{BLOG_DESCRIPTION}</p>
+			</section>
 			<section>
 				<ul>
 					{
-						posts.map((post) => (
-							<li>
+						posts.map((post, index) => (
+							<li style={`animation-delay: ${140 + index * 90}ms`}>
 								<a href={`/blog/${post.id}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
+									<img
+										width={720}
+										height={360}
+										src={post.data.heroImage}
+										alt={`Cover image for ${post.data.title}`}
+									/>
 									<h4 class="title">{post.data.title}</h4>
+									<p class="excerpt">{post.data.description}</p>
 									<p class="date">
 										<FormattedDate date={post.data.pubDate} />
 									</p>
@@ -106,6 +226,20 @@ const posts = (await getCollection('blog')).sort(
 				</ul>
 			</section>
 		</main>
+		<script is:inline>
+			const enteredFromInsights = window.sessionStorage.getItem('insights-entry-transition') === '1';
+			if (enteredFromInsights) {
+				document.body.classList.add('entered-from-insights');
+				window.sessionStorage.removeItem('insights-entry-transition');
+			}
+
+			const cardLinks = document.querySelectorAll('ul li a');
+			for (const link of cardLinks) {
+				link.addEventListener('click', () => {
+					link.style.transform = 'translateY(-2px) scale(0.992)';
+				});
+			}
+		</script>
 		<Footer />
 	</body>
 </html>

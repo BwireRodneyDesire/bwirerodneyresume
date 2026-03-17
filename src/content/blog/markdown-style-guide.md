@@ -1,214 +1,45 @@
 ---
-title: "Markdown Style Guide"
-description: "Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro."
-pubDate: "Jun 19 2024"
-heroImage: "/blog-placeholder-1.jpg"
+title: "Embedded Smart Water Level Monitoring System"
+description: "A hardware-software system that monitors tank levels, triggers alerts, and improves real-world reliability."
+pubDate: "Mar 17 2026"
+heroImage: "/images/embeddedsystem.jpeg"
 ---
 
-Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
+## Overview
 
-## Headings
+The Embedded Smart Water Level Monitoring System is a hardware-first project I developed to monitor tank levels continuously and notify users when the system reaches critical thresholds. It combines sensing, microcontroller logic, local display feedback, and alert mechanisms into one reliable monitoring unit.
 
-The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
+This project sits at the intersection of embedded systems, electronics, and software engineering. It gave me a practical way to solve a real infrastructure problem while improving my skills in hardware-software integration.
 
-# H1
+![Embedded smart water monitoring hardware](/images/embeddedsystem.jpeg)
 
-## H2
+## System Architecture
 
-### H3
+At the center of the system is a microcontroller that reads sensor signals, filters noise, and evaluates water level states in near real time.
 
-#### H4
+Based on current readings, the system can:
 
-##### H5
+- Display the live level for local visibility
+- Trigger alarms when the tank becomes empty or reaches full capacity
+- Activate LEDs/buzzer for immediate local alerts
+- Support remote notification paths through communication modules
 
-###### H6
+The architecture was intentionally modular so individual components can be tested and upgraded independently.
 
-## Paragraph
+## Development Process
 
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
+Building the project required iterative work across circuit design, firmware logic, and field testing.
 
-Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
+- Designed and wired sensor, display, and alert circuits
+- Programmed the microcontroller state logic and threshold conditions
+- Implemented debouncing/filtering to reduce false sensor triggers
+- Tuned level thresholds based on observed tank behavior
+- Validated continuous operation for responsiveness and stability
 
-## Images
+A major challenge was preserving responsiveness without sacrificing reliability. Sensor noise and fluctuating water surfaces can create unstable readings, so robust filtering and state handling were essential.
 
-### Syntax
+## Key Insight
 
-```markdown
-![Alt text](./full/or/relative/path/of/image)
-```
+This project reinforced a core embedded-systems lesson: real-world reliability matters more than ideal lab behavior. In physical environments, inputs are noisy and conditions are inconsistent. A useful system must be fault-tolerant, predictable, and easy to maintain over time.
 
-### Output
-
-![blog placeholder](/blog-placeholder-about.jpg)
-
-## Blockquotes
-
-The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
-
-### Blockquote without attribution
-
-#### Syntax
-
-```markdown
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
-> **Note** that you can use _Markdown syntax_ within a blockquote.
-```
-
-#### Output
-
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
-> **Note** that you can use _Markdown syntax_ within a blockquote.
-
-### Blockquote with attribution
-
-#### Syntax
-
-```markdown
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
-```
-
-#### Output
-
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
-
-[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
-
-## Tables
-
-### Syntax
-
-```markdown
-| Italics   | Bold     | Code   |
-| --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
-```
-
-### Output
-
-| Italics   | Bold     | Code   |
-| --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
-
-## Code Blocks
-
-### Syntax
-
-we can use 3 backticks ``` in new line and write snippet and close with 3 backticks on new line and to highlight language specific syntax, write one word of language name after first 3 backticks, for eg. html, javascript, css, markdown, typescript, txt, bash
-
-````markdown
-```html
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<title>Example HTML5 Document</title>
-	</head>
-	<body>
-		<p>Test</p>
-	</body>
-</html>
-```
-````
-
-### Output
-
-```html
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<title>Example HTML5 Document</title>
-	</head>
-	<body>
-		<p>Test</p>
-	</body>
-</html>
-```
-
-## List Types
-
-### Ordered List
-
-#### Syntax
-
-```markdown
-1. First item
-2. Second item
-3. Third item
-```
-
-#### Output
-
-1. First item
-2. Second item
-3. Third item
-
-### Unordered List
-
-#### Syntax
-
-```markdown
-- List item
-- Another item
-- And another item
-```
-
-#### Output
-
-- List item
-- Another item
-- And another item
-
-### Nested list
-
-#### Syntax
-
-```markdown
-- Fruit
-  - Apple
-  - Orange
-  - Banana
-- Dairy
-  - Milk
-  - Cheese
-```
-
-#### Output
-
-- Fruit
-  - Apple
-  - Orange
-  - Banana
-- Dairy
-  - Milk
-  - Cheese
-
-## Other Elements — abbr, sub, sup, kbd, mark
-
-### Syntax
-
-```markdown
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-H<sub>2</sub>O
-
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
-
-Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
-```
-
-### Output
-
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-H<sub>2</sub>O
-
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
-
-Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+That mindset now guides how I build both hardware-integrated software and production-ready web systems.

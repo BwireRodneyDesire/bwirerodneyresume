@@ -1,16 +1,42 @@
 ---
-title: "First post"
-description: "Lorem ipsum dolor sit amet"
-pubDate: "Jul 08 2022"
-heroImage: "/blog-placeholder-3.jpg"
+title: "Smart Water Monitoring System (Web Platform)"
+description: "A web dashboard that turns live tank readings into clear, actionable water management insights."
+pubDate: "Mar 17 2026"
+heroImage: "/images/website.png"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+## Overview
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+The Smart Water Monitoring System web platform is a lightweight dashboard I built to make day-to-day water management easier. Instead of physically checking the tank, users can open a browser and immediately see the current level, system condition, and whether attention is needed.
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+This website serves as the information layer of the full solution. The embedded hardware handles sensing and signal collection, while the web interface translates those readings into a format that is fast to understand.
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+![Smart water web dashboard](/images/website.png)
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+## What I Built
+
+I designed and deployed a static web interface focused on clarity, speed, and practical usability.
+
+- Displayed water level readings in a clear, visual format
+- Added system status indicators for quick diagnostics
+- Designed the layout for remote monitoring on desktop and mobile
+- Kept interactions simple so non-technical users can understand the system instantly
+
+The core design decision was to reduce friction. Every section of the page answers one question: What is the current level, and does the user need to act now?
+
+## Technical Approach
+
+The platform was built with lightweight web technologies and deployed on GitHub Pages for low-maintenance hosting. Since the monitoring stack includes an embedded system, the web layer was structured as a clean visualization endpoint that can be updated with sensor data streams.
+
+Technical priorities during development:
+
+- Responsive UI with minimal visual noise
+- Structured presentation of sensor data and state transitions
+- Easy deployment process and straightforward maintenance
+- Reliable integration path between IoT/embedded output and web display
+
+## Key Insight
+
+The biggest lesson from this project was that data collection is only half the work. The second half is interface design. Raw numbers from sensors are not useful until they are presented in a way that supports quick, confident decisions.
+
+Building this dashboard reinforced my product mindset: engineering quality and user clarity have to move together.

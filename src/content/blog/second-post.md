@@ -1,16 +1,42 @@
 ---
-title: "Second post"
-description: "Lorem ipsum dolor sit amet"
-pubDate: "Jul 15 2022"
-heroImage: "/blog-placeholder-4.jpg"
+title: "Algorithmic Trading Bots"
+description: "Automated trading systems built for signal-driven execution, risk control, and resilient performance."
+pubDate: "Mar 17 2026"
+heroImage: "/images/utility.jpeg"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+## Overview
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+My algorithmic trading bot projects are focused on building automated systems that analyze market data and execute trades using predefined, testable strategies. The purpose is to shift trading from emotional decision-making to a structured, data-driven process.
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+Rather than relying on constant manual monitoring, these bots evaluate market conditions continuously and respond based on logic, thresholds, and risk rules.
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+## Core Concepts
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+Each bot is designed around four principles:
+
+- Market analysis using technical indicators and statistical signals
+- Rule-based entries and exits to reduce discretionary bias
+- Built-in risk management through position sizing and stop logic
+- Continuous monitoring with controlled execution frequency
+
+The strategy engine evaluates price action, confirms trade conditions, and only places orders when all configured criteria are satisfied.
+
+## Technical Stack
+
+The systems are primarily developed with Python and integrated with MetaTrader 5 for order routing and execution.
+
+Main implementation areas include:
+
+- Python modules for signal generation and execution workflows
+- MetaTrader 5 APIs for market data and trade operations
+- Multi-signal strategy composition and validation
+- Time-based loop optimization for efficient runtime behavior
+
+One major engineering priority was reducing server load while preserving responsiveness. I tuned polling intervals, streamlined indicator calculations, and improved execution checks to avoid unnecessary overhead.
+
+## Key Insight
+
+The biggest lesson from these projects is that strategy quality alone does not produce robust trading systems. Real performance comes from the combination of strategy, execution discipline, and risk controls.
+
+Algorithmic trading is ultimately a systems engineering challenge under uncertainty. You are not building a perfect predictor; you are building a resilient decision engine that can survive changing market regimes.

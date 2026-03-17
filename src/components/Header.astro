@@ -1,21 +1,67 @@
 ---
-import { SITE_TITLE } from '../consts';
+const isHomePage = Astro.url.pathname === '/';
+const sectionHref = (id: string) => (isHomePage ? `#${id}` : `/#${id}`);
 ---
 
 <header>
 	<nav>
 		<h2 class="brand"><a href="/">Bwire Rodney</a></h2>
 		<div class="internal-links" aria-label="Primary">
-			<a href="#home">Home</a>
-			<a href="#services">Services</a>
-			<a href="#about">About</a>
-			<a href="#skills">Skills</a>
+			<a class="section-link" href={sectionHref('home')}>Home</a>
+			<a class="section-link" href={sectionHref('services')}>Services</a>
+			<a class="section-link" href={sectionHref('about')}>About</a>
+			<a class="section-link" href={sectionHref('skills')}>Skills</a>
 		</div>
 		<div class="header-cta">
-			<a href="#contact" class="cta-btn">Let's Talk</a>
+			<a href={sectionHref('contact')} class="cta-btn section-link">Let's Talk</a>
 		</div>
 	</nav>
 </header>
+<script is:inline>
+	const isHome = window.location.pathname === '/';
+	if (isHome) {
+		const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		const navLinks = document.querySelectorAll('.section-link[href^="#"]');
+
+		const animateTarget = (target) => {
+			if (reduceMotion || !target || typeof target.animate !== 'function') return;
+			target.animate(
+				[
+					{ opacity: 0.72, transform: 'translateY(10px) scale(0.995)', filter: 'brightness(0.94)' },
+					{ opacity: 1, transform: 'translateY(0) scale(1)', filter: 'brightness(1)' }
+				],
+				{
+					duration: 760,
+					easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+					fill: 'both'
+				}
+			);
+		};
+
+		for (const link of navLinks) {
+			link.addEventListener('click', (event) => {
+				const href = link.getAttribute('href');
+				if (!href || !href.startsWith('#')) return;
+
+				const target = document.querySelector(href);
+				if (!target) return;
+
+				event.preventDefault();
+				const header = document.querySelector('header');
+				const headerHeight = header ? header.getBoundingClientRect().height : 0;
+				const targetTop = target.getBoundingClientRect().top + window.scrollY - headerHeight - 12;
+
+				window.scrollTo({
+					top: Math.max(0, targetTop),
+					behavior: reduceMotion ? 'auto' : 'smooth'
+				});
+
+				window.history.replaceState(null, '', href);
+				window.setTimeout(() => animateTarget(target), reduceMotion ? 0 : 220);
+			});
+		}
+	}
+</script>
 <style>
 	header {
 		position: sticky;
